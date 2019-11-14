@@ -28,7 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     } else {
                         expression += event.target.innerHTML;
                         console.log('eee', expression, typeof (expression));
-                        document.getElementById('inptext').value += event.target.innerHTML;
+                        let r = document.getElementById('inptext').value += event.target.innerHTML;
+                        if(r.toString() === isNan(r)) {
+                            document.getElementById('inptext').value = 'Error';
+                            }
                         }
                     }
                 };
